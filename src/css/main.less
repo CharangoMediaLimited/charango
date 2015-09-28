@@ -1,0 +1,178 @@
+html {
+	min-height: 100%;
+	height: inherit;
+}
+
+body {
+	color: #ffffff;
+	background-color: #000000;
+	font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	line-height: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
+	overflow: hidden;
+
+	//max-width: 1200px;
+	//margin: 0 auto !important;
+
+	.maincontainer {
+		position: absolute;
+		//max-width: 1200px;
+		//margin: 0 auto;
+		height: 100%;
+		width: 100%;
+	}
+}
+
+#wrapper {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	.background {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		overflow: hidden;
+		z-index: -100;
+
+		// it is not possible to ‘stretch’ videos, the aspect ratio must be respected
+		video {
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			// this keeps the aspect ratio
+			width: auto;
+			height: 100%;
+			//max-width: 1200px;
+
+			// make the video stretch to fill!
+			width: 100%;
+			object-fit: cover;
+			object-position: bottom left;
+
+			// the video scales to fit the available width while maintaining the video ratio
+			//width: 100%;
+			//height: auto;
+		}
+	}
+
+	.logo {
+		letter-spacing: 2px;
+		font-size: 30px;
+		color: #ffffff;
+		text-align: left;
+		margin: 30px 100px;
+	}
+
+	ul {
+		position: absolute;
+		padding: 0;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 110px;
+		margin: auto;
+		//border: 1px solid red;
+
+		li {
+			display: inline-block;
+			width: 25%;
+			height: 110px;
+			padding: 0 2% 0 2%;
+			//border: 1px solid red;
+
+			.icon {
+				width: 100%;
+				height: 100%;
+				background-size: 77px 80px;
+				background-repeat: no-repeat;
+				background-position: center;
+
+				&.design {
+					background-image: url('../img/design.png');
+				}
+
+				&.development {
+					background-image: url('../img/design.png');
+				}
+
+				&.marketing {
+					background-image: url('../img/design.png');
+				}
+			}
+
+			.label {
+				color: #ffffff;
+				font-family: "Open Sans", serif;
+				letter-spacing: 2px;
+			}
+		}
+	}
+}
+
+@media (max-width: 700px) {
+	#wrapper {
+		ul {
+		    height: 90%;
+		    display: flex;
+		    flex-direction: column;
+			justify-content: space-around;
+			//border: 1px solid red;
+
+			li {
+				width: 100%;
+				margin: 0;
+				//border: 1px solid red;
+
+				.icon {
+					width: 100%;
+					height: 100%;
+					background-size: 77px 80px;
+					background-repeat: no-repeat;
+					background-position: center;
+
+					&.design {
+						background-image: url('../img/design.png');
+					}
+
+					&.development {
+						background-image: url('../img/design.png');
+					}
+
+					&.marketing {
+						background-image: url('../img/design.png');
+					}
+				}
+
+				.label {
+					color: #ffffff;
+					font-family: "Open Sans", serif;
+					letter-spacing: 2px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-height: 500px) {
+	#wrapper {
+		ul {
+			li {
+				height: 90px;
+
+				.icon {
+					background-size: 58px 60px;
+				}
+			}
+		}
+	}
+}

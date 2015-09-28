@@ -1,0 +1,41 @@
+
+-----------------------------------------
+Grunt
+-----------------------------------------
+Excellent articule for setting up Grunt
+https://24ways.org/2013/grunt-is-not-weird-and-hard/
+
+Currently setup to:
+	-concat JS files
+	-minify JS files
+	-compress images
+	-preprocess LESS files to CSS
+	-autoprefix CSS
+
+All 'built' files are built to the deploy directory
+The index.html references only built files
+
+-----------------------------------------
+Normalize
+-----------------------------------------
+Normalize.css makes browsers render all elements more consistently and in line with modern standards.
+It precisely targets only the styles that need normalizing.
+
+As opposed to CSS resets, Normalize.css:
+
+* targets only the styles that need normalizing
+* preserves useful browser defaults rather than erasing them
+* corrects bugs and common browser inconsistencies
+* improves usability with subtle improvements
+* doesn't clutter the debugging tools
+* has better documentation
+
+For more information about Normalize.css, please refer to its [project
+page](https://necolas.github.com/normalize.css/), as well as this
+[blog post](http://nicolasgallagher.com/about-normalize-css/).
+
+-----------------------------------------
+Auto Prefixing for CSS
+-----------------------------------------
+https://css-tricks.com/autoprefixer/
+Autoprefixer parses CSS files and adds vendor prefixes to CSS rules using the Can I Use database to determine which prefixes are needed.
