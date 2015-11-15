@@ -8,6 +8,12 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+         clean: {
+            build: {
+                src: ["deploy"]
+            }
+         },
+
          concat: {
              dist: {
                  src: [
@@ -30,7 +36,7 @@ module.exports = function(grunt) {
                  files: [{
                      expand: true,
                      cwd: 'src/img/',
-                     src: ['**/*.{png,jpg,gif}'],
+                     src: ['**/*.{png,jpg,gif,svg,mp4}'],
                      dest: 'deploy/img'
                  }]
              }
@@ -96,15 +102,16 @@ module.exports = function(grunt) {
     });
 
     // 3. Where we tell Grunt we plan to use this plug-in.
-    grunt.loadNpmTasks('grunt-contrib-concat'); // concat js files      npm install grunt-contrib-concat --save-dev
-    grunt.loadNpmTasks('grunt-contrib-uglify'); // minify js files      npm install grunt-contrib-uglify --save-dev
-    grunt.loadNpmTasks('grunt-contrib-imagemin'); // optimise images    npm install grunt-contrib-imagemin --save-dev
-    grunt.loadNpmTasks('grunt-contrib-less'); // less                   npm install grunt-contrib-less --save-dev
-    grunt.loadNpmTasks('grunt-contrib-watch'); // watch                 npm install grunt-contrib-watch --save-dev
-    grunt.loadNpmTasks('grunt-autoprefixer'); // autoprefixer           npm install grunt-autoprefixer --save-dev
-    grunt.loadNpmTasks('grunt-contrib-copy'); // copy files             npm install grunt-contrib-copy --save-dev
+    grunt.loadNpmTasks('grunt-contrib-clean'); // clean files/directories   npm install grunt-contrib-clean --save-dev
+    grunt.loadNpmTasks('grunt-contrib-concat'); // concat js files          npm install grunt-contrib-concat --save-dev
+    grunt.loadNpmTasks('grunt-contrib-uglify'); // minify js files          npm install grunt-contrib-uglify --save-dev
+    grunt.loadNpmTasks('grunt-contrib-imagemin'); // optimise images        npm install grunt-contrib-imagemin --save-dev
+    grunt.loadNpmTasks('grunt-contrib-less'); // less                       npm install grunt-contrib-less --save-dev
+    grunt.loadNpmTasks('grunt-contrib-watch'); // watch                     npm install grunt-contrib-watch --save-dev
+    grunt.loadNpmTasks('grunt-autoprefixer'); // autoprefixer               npm install grunt-autoprefixer --save-dev
+    grunt.loadNpmTasks('grunt-contrib-copy'); // copy files                 npm install grunt-contrib-copy --save-dev
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'less', 'autoprefixer', 'copy']);  // taken out 'watch' for now
+    grunt.registerTask('default', ['clean', 'concat', 'uglify', 'imagemin', 'less', 'autoprefixer', 'copy']);  // taken out 'watch' for now
 };
 
